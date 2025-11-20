@@ -1,115 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-    <!-- 
-        Fichier principal - Charge tous les autres fichiers AIML
-        Pattern: LOAD AIML (exécuté automatiquement au démarrage)
-    -->
 
-    <category>
-        <pattern>LOAD AIML</pattern>
-        <template>
-            <think>
-                <!-- Configuration du bot -->
-                <set name="bot_name">Legrand13</set>
-                <set name="bot_version">1.0</set>
-                <set name="language">fr</set>
-                <set name="username">invité</set>
-            </think>
-            
-            <!-- Chargement des fichiers AIML -->
-            <learn>salutations.aiml</learn>
-            <learn>general.aiml</learn>
-            <learn>fallback.aiml</learn>
-            
-            <!-- Message de confirmation -->
-            </template>
-    </category>
+<!-- 
+    LEGRAND13 BOT - FICHIER UNIQUE
+    Toutes les fonctionnalités dans un seul fichier
+-->
 
-    <!-- Commande de rechargement manuel -->
-    <category>
-        <pattern>RELOAD</pattern>
-        <template>
-            Rechargement des fichiers AIML en cours...
-            <learn>salutations.aiml</learn>
-            <learn>general.aiml</learn>
-            <learn>fallback.aiml</learn>
-            ✅ Rechargement terminé !
-        </template>
-    </category>
+<!-- ==================== CONFIGURATION ==================== -->
+<category>
+    <pattern>LOAD AIML</pattern>
+    <template>
+        <think>
+            <set name="bot_name">Legrand13</set>
+            <set name="bot_version">1.0</set>
+            <set name="language">fr</set>
+            <set name="username">invité</set>
+        </think>
+        ✅ Système Legrand13 initialisé - Prêt à dialoguer !
+    </template>
+</category>
 
-</aiml>
+<category>
+    <pattern>RELOAD</pattern>
+    <template>
+        ✅ Système rechargé - Configuration actualisée !
+    </template>
+</category>
 
-<?xml version="1.0" encoding="UTF-8"?>
-<aiml version="2.0">
+<!-- ==================== SALUTATIONS ==================== -->
+<category>
+    <pattern>BONJOUR</pattern>
+    <template>
+        Bonjour ! Je suis <get name="bot_name"/>, votre assistant académique. 
+        Comment puis-je vous aider aujourd'hui ?
+    </template>
+</category>
 
-    <!-- Salutations de base -->
-    <category>
-        <pattern>BONJOUR</pattern>
-        <template>
-            Bonjour ! Je suis Legrand13, votre assistant académique. 
-            Comment puis-je vous aider aujourd'hui ?
-        </template>
-    </category>
+<category>
+    <pattern>SALUT</pattern>
+    <template>
+        Salut ! Ravi de vous rencontrer. Que souhaitez-vous explorer ?
+    </template>
+</category>
 
-    <category>
-        <pattern>SALUT</pattern>
-        <template>
-            Salut ! Ravi de vous rencontrer. Que souhaitez-vous explorer ?
-        </template>
-    </category>
+<category>
+    <pattern>HELLO</pattern>
+    <template>
+        Hello ! Welcome to Legrand13 academic assistant.
+    </template>
+</category>
 
-    <category>
-        <pattern>HELLO</pattern>
-        <template>
-            Hello ! Welcome to Legrand13 academic assistant.
-        </template>
-    </category>
+<category>
+    <pattern>BONSOIR</pattern>
+    <template>
+        Bonsoir ! Comment s'est passée votre journée académique ?
+    </template>
+</category>
 
-    <category>
-        <pattern>BONSOIR</pattern>
-        <template>
-            Bonsoir ! Comment s'est passée votre journée académique ?
-        </template>
-    </category>
+<category>
+    <pattern>CA VA</pattern>
+    <template>
+        Je fonctionne parfaitement, merci ! Et vous, comment allez-vous ?
+    </template>
+</category>
 
-    <!-- État de l'utilisateur -->
-    <category>
-        <pattern>CA VA</pattern>
-        <template>
-            Je fonctionne parfaitement, merci ! 
-            Et vous, comment allez-vous ?
-        </template>
-    </category>
+<category>
+    <pattern>BIEN</pattern>
+    <template>
+        Super ! Comment puis-je vous aider ?
+    </template>
+</category>
 
-    <category>
-        <pattern>BIEN</pattern>
-        <template>
-            Super ! Comment puis-je vous aider ?
-        </template>
-    </category>
+<category>
+    <pattern>AU REVOIR</pattern>
+    <template>
+        Au revoir ! À bientôt pour de nouvelles découvertes académiques !
+    </template>
+</category>
 
-    <!-- Au revoir -->
-    <category>
-        <pattern>AU REVOIR</pattern>
-        <template>
-            Au revoir ! À bientôt pour de nouvelles découvertes académiques !
-        </template>
-    </category>
+<category>
+    <pattern>BYE</pattern>
+    <template>
+        Goodbye! See you soon for academic discussions.
+    </template>
+</category>
 
-    <category>
-        <pattern>BYE</pattern>
-        <template>
-            Goodbye! See you soon for academic discussions.
-        </template>
-    </category>
+<category>
+    <pattern>MERCI</pattern>
+    <template>
+        Je vous en prie ! C'est un plaisir de vous aider.
+    </template>
+</category>
 
-    <!-- Remerciements -->
-    <category>
-        <pattern>MERCI</pattern>
-        <template>
-            Je vous en prie ! C'est un plaisir de vous aider.
-        </template>
-    </category>
+<!-- ==================== GÉNÉRAL ==================== -->
+<category>
+    <pattern>QUI ES TU</pattern>
+    <template>
+        Je suis <get name="bot_name"/>, version <get name="bot_version"/>.
+        Votre assistant dédié aux projets académiques et à la recherche.
+    </template>
+</category>
+
+<category>
+    <pattern>QUE FAIS TU</pattern>
+    <template>
+        Je peux :
+        • Répondre à vos questions académiques
+        • Vous aider à organiser vos idées
+        • Discuter de programmation et cybersécurité
+        • Assister dans vos recherches
+    </template>
+</category>
+
+<category>
+    <pattern>JE M APPELLE *</pattern>
+    <template>
+        <think>
+            <set name="username"><star/></set>
+        </think>
+        Enchanté <get name="username"/> ! 
+        Je m'en souviendrai pour nos futures conversations.
+    </template>
+</category>
+
+<category>
+    <pattern>MON NOM EST *</pattern>
+    <template>
+        <think>
+            <set name="username"><star/></set>
+        </think>
+        Ravi de vous connaître <get name="username"/> !
+    </template>
+</category>
+
+<category>
+    <pattern>QUEL EST MON NOM</pattern>
+    <template>
+        <condition name="username">
+            <li value="unknown">Je ne connais pas encore votre nom. Pouvez-vous me le dire ?</li>
+            <li>Vous êtes <get name="username"/>, bien sûr !</li>
+        </condition>
+    </template>
+</category>
+
+<category>
+    <pattern>QUE PEUX TU FAIRE</pattern>
+    <template>
+        🔧 **Mes fonctionnalités :**
+        • Discussions académiques
+        • Assistance en programmation
+        • Questions sur la cybersécurité
+        • Organisation de projets
+        • Recherche documentaire
+        
+        Dites-moi ce qui vous intéresse !
+    </template>
+</category>
+
+<category>
+    <pattern>STATUT</pattern>
+    <template>
+        ✅ **Système Legrand13 Opérationnel**
+        • Bot: <get name="bot_name"/>
+        • Version: <get name="bot_version"/>
+        • Langue: <get name="language"/>
+        • Utilisateur: <get name="username"/>
+        • Statut: Optimal
+    </template>
+</category>
+
+<!-- ==================== FALLBACK ==================== -->
+<category>
+    <pattern>*</pattern>
+    <template>
+        Je n'ai pas bien compris "<star/>". 
+        Pouvez-vous reformuler votre question ?
+        
+        💡 **Conseil** : Essayez avec "programmation", "recherche", "académique"
+    </template>
+</category>
+
+<category>
+    <pattern>AIDE</pattern>
+    <template>
+        🆘 **Centre d'aide Legrand13**
+        
+        **Commandes utiles :**
+        • "Bonjour" - Démarrer une conversation
+        • "Qui es tu" - En savoir plus sur moi
+        • "Que peux tu faire" - Voir mes fonctionnalités
+        • "Statut" - Vérifier l'état du système
+        
+        Quelle est votre question ?
+    </template>
+</category>
 
 </aiml>
 
