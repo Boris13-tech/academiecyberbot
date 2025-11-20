@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <!-- 
+        Fichier principal - Charge tous les autres fichiers AIML
+        Pattern: LOAD AIML (exécuté automatiquement au démarrage)
+    -->
+
+    <category>
+        <pattern>LOAD AIML</pattern>
+        <template>
+            <think>
+                <!-- Configuration du bot -->
+                <set name="bot_name">Legrand13</set>
+                <set name="bot_version">1.0</set>
+                <set name="language">fr</set>
+                <set name="username">invité</set>
+            </think>
+            
+            <!-- Chargement des fichiers AIML -->
+            <learn>salutations.aiml</learn>
+            <learn>general.aiml</learn>
+            <learn>fallback.aiml</learn>
+            
+            <!-- Message de confirmation -->
+            </template>
+    </category>
+
+    <!-- Commande de rechargement manuel -->
+    <category>
+        <pattern>RELOAD</pattern>
+        <template>
+            Rechargement des fichiers AIML en cours...
+            <learn>salutations.aiml</learn>
+            <learn>general.aiml</learn>
+            <learn>fallback.aiml</learn>
+            ✅ Rechargement terminé !
+        </template>
+    </category>
+
+</aiml>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+    <!-- Salutations de base -->
+    <category>
+        <pattern>BONJOUR</pattern>
+        <template>
+            Bonjour ! Je suis Legrand13, votre assistant académique. 
+            Comment puis-je vous aider aujourd'hui ?
+        </template>
+    </category>
+
+    <category>
+        <pattern>SALUT</pattern>
+        <template>
+            Salut ! Ravi de vous rencontrer. Que souhaitez-vous explorer ?
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Hello ! Welcome to Legrand13 academic assistant.
+        </template>
+    </category>
+
+    <category>
+        <pattern>BONSOIR</pattern>
+        <template>
+            Bonsoir ! Comment s'est passée votre journée académique ?
+        </template>
+    </category>
+
+    <!-- État de l'utilisateur -->
+    <category>
+        <pattern>CA VA</pattern>
+        <template>
+            Je fonctionne parfaitement, merci ! 
+            Et vous, comment allez-vous ?
+        </template>
+    </category>
+
+    <category>
+        <pattern>BIEN</pattern>
+        <template>
+            Super ! Comment puis-je vous aider ?
+        </template>
+    </category>
+
+    <!-- Au revoir -->
+    <category>
+        <pattern>AU REVOIR</pattern>
+        <template>
+            Au revoir ! À bientôt pour de nouvelles découvertes académiques !
+        </template>
+    </category>
+
+    <category>
+        <pattern>BYE</pattern>
+        <template>
+            Goodbye! See you soon for academic discussions.
+        </template>
+    </category>
+
+    <!-- Remerciements -->
+    <category>
+        <pattern>MERCI</pattern>
+        <template>
+            Je vous en prie ! C'est un plaisir de vous aider.
+        </template>
+    </category>
+
+</aiml>
+
+
+          
