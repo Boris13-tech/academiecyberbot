@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-<!-- 
-    LEGRAND13 BOT - FICHIER UNIQUE
-    Toutes les fonctionnalités dans un seul fichier
--->
-
-<!-- ==================== CONFIGURATION ==================== -->
 <category>
     <pattern>LOAD AIML</pattern>
     <template>
@@ -21,30 +15,23 @@
 </category>
 
 <category>
-    <pattern>RELOAD</pattern>
-    <template>
-        ✅ Système rechargé - Configuration actualisée !
-    </template>
-</category>
-
-<!-- ==================== SALUTATIONS ==================== -->
-<category>
     <pattern>BONJOUR</pattern>
-    <template>
-        Bonjour ! Je suis <get name="bot_name"/>, votre assistant académique. 
-        Comment puis-je vous aider aujourd'hui ?
-    </template>
-</category>
-
-<category>
     <pattern>SALUT</pattern>
+    <pattern>COUCOU</pattern>
+    <pattern>YO</pattern>
     <template>
-        Salut ! Ravi de vous rencontrer. Que souhaitez-vous explorer ?
+        <random>
+            <li>Bonjour ! Je suis Legrand13, votre assistant académique.</li>
+            <li>Salut ! Ravi de vous rencontrer.</li>
+            <li>Coucou ! Comment puis-je vous aider aujourd'hui ?</li>
+        </random>
     </template>
 </category>
 
 <category>
     <pattern>HELLO</pattern>
+    <pattern>HI</pattern>
+    <pattern>HEY</pattern>
     <template>
         Hello ! Welcome to Legrand13 academic assistant.
     </template>
@@ -52,6 +39,7 @@
 
 <category>
     <pattern>BONSOIR</pattern>
+    <pattern>SOIR</pattern>
     <template>
         Bonsoir ! Comment s'est passée votre journée académique ?
     </template>
@@ -59,42 +47,50 @@
 
 <category>
     <pattern>CA VA</pattern>
+    <pattern>COMMENT VAS TU</pattern>
+    <pattern>TU VAS BIEN</pattern>
+    <pattern>TOUT VA BIEN</pattern>
     <template>
-        Je fonctionne parfaitement, merci ! Et vous, comment allez-vous ?
+        <random>
+            <li>Je fonctionne parfaitement, merci ! Et vous ?</li>
+            <li>Très bien ! Prêt à vous assister. Et de votre côté ?</li>
+            <li>Excellent ! Tout fonctionne. Comment allez-vous ?</li>
+        </random>
     </template>
 </category>
 
 <category>
     <pattern>BIEN</pattern>
+    <pattern>TRES BIEN</pattern>
+    <pattern>PARFAIT</pattern>
     <template>
-        Super ! Comment puis-je vous aider ?
+        <random>
+            <li>Super ! Comment puis-je vous aider ?</li>
+            <li>Génial ! Que souhaitez-vous explorer ?</li>
+            <li>Parfait ! De quoi avez-vous besoin ?</li>
+        </random>
     </template>
 </category>
 
 <category>
     <pattern>AU REVOIR</pattern>
+    <pattern>A BIENTOT</pattern>
+    <pattern>A PLUS</pattern>
+    <pattern>ADIEU</pattern>
     <template>
-        Au revoir ! À bientôt pour de nouvelles découvertes académiques !
+        <random>
+            <li>Au revoir ! À bientôt pour de nouvelles découvertes !</li>
+            <li>À la prochaine ! N'hésitez pas à revenir.</li>
+            <li>Bonne journée ! Portez-vous bien.</li>
+        </random>
     </template>
 </category>
 
-<category>
-    <pattern>BYE</pattern>
-    <template>
-        Goodbye! See you soon for academic discussions.
-    </template>
-</category>
-
-<category>
-    <pattern>MERCI</pattern>
-    <template>
-        Je vous en prie ! C'est un plaisir de vous aider.
-    </template>
-</category>
-
-<!-- ==================== GÉNÉRAL ==================== -->
 <category>
     <pattern>QUI ES TU</pattern>
+    <pattern>TU ES QUI</pattern>
+    <pattern>PRESENTE TOI</pattern>
+    <pattern>TON IDENTITE</pattern>
     <template>
         Je suis <get name="bot_name"/>, version <get name="bot_version"/>.
         Votre assistant dédié aux projets académiques et à la recherche.
@@ -103,64 +99,91 @@
 
 <category>
     <pattern>QUE FAIS TU</pattern>
+    <pattern>TU FAIS QUOI</pattern>
+    <pattern>TON ROLE</pattern>
+    <pattern>A QUOI TU SERS</pattern>
+    <pattern>TES FONCTIONS</pattern>
     <template>
-        Je peux :
-        • Répondre à vos questions académiques
-        • Vous aider à organiser vos idées
-        • Discuter de programmation et cybersécurité
-        • Assister dans vos recherches
-    </template>
-</category>
-
-<category>
-    <pattern>JE M APPELLE *</pattern>
-    <template>
-        <think>
-            <set name="username"><star/></set>
-        </think>
-        Enchanté <get name="username"/> ! 
-        Je m'en souviendrai pour nos futures conversations.
-    </template>
-</category>
-
-<category>
-    <pattern>MON NOM EST *</pattern>
-    <template>
-        <think>
-            <set name="username"><star/></set>
-        </think>
-        Ravi de vous connaître <get name="username"/> !
-    </template>
-</category>
-
-<category>
-    <pattern>QUEL EST MON NOM</pattern>
-    <template>
-        <condition name="username">
-            <li value="unknown">Je ne connais pas encore votre nom. Pouvez-vous me le dire ?</li>
-            <li>Vous êtes <get name="username"/>, bien sûr !</li>
-        </condition>
+        <random>
+            <li>
+                Je peux vous aider avec :
+                • Questions académiques • Programmation • Recherche
+                • Cybersécurité • Organisation de projets
+            </li>
+            <li>
+                Mes domaines d'expertise :
+                - Assistance académique - Développement - Méthodologie
+                - Conseil en recherche - Support technique
+            </li>
+        </random>
     </template>
 </category>
 
 <category>
     <pattern>QUE PEUX TU FAIRE</pattern>
+    <pattern>TES CAPACITES</pattern>
+    <pattern>TU SAIS FAIRE QUOI</pattern>
+    <pattern>LISTE TES FONCTIONNALITES</pattern>
     <template>
-        🔧 **Mes fonctionnalités :**
-        • Discussions académiques
+        🔧 Mes fonctionnalités :
+        • Discussions académiques et recherche
         • Assistance en programmation
-        • Questions sur la cybersécurité
-        • Organisation de projets
-        • Recherche documentaire
+        • Conseil en méthodologie de recherche
+        • Organisation de projets académiques
+        • Support en cybersécurité basique
         
-        Dites-moi ce qui vous intéresse !
+        Quel domaine vous intéresse ?
+    </template>
+</category>
+
+<category>
+    <pattern>JE M APPELLE *</pattern>
+    <pattern>MON NOM EST *</pattern>
+    <pattern>JE SUIS *</pattern>
+    <pattern>ON M APPELLE *</pattern>
+    <template>
+        <think>
+            <set name="username"><star/></set>
+        </think>
+        <random>
+            <li>Enchanté <get name="username"/> ! Je m'en souviendrai.</li>
+            <li>Ravi de vous connaître <get name="username"/> !</li>
+            <li>Bienvenue <get name="username"/> ! Comment puis-je vous aider ?</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>QUEL EST MON NOM</pattern>
+    <pattern>TU CONNAIS MON NOM</pattern>
+    <pattern>RAPPELLE TOI MON NOM</pattern>
+    <pattern>QUI SUIS JE</pattern>
+    <template>
+        <condition name="username">
+            <li value="unknown">
+                <random>
+                    <li>Je ne connais pas encore votre nom. Pouvez-vous me le dire ?</li>
+                    <li>Je n'ai pas enregistré votre nom. Quel est-il ?</li>
+                </random>
+            </li>
+            <li>
+                <random>
+                    <li>Vous êtes <get name="username"/>, bien sûr !</li>
+                    <li>Sans hésitation, vous êtes <get name="username"/> !</li>
+                    <li>Je me souviens de vous, <get name="username"/> !</li>
+                </random>
+            </li>
+        </condition>
     </template>
 </category>
 
 <category>
     <pattern>STATUT</pattern>
+    <pattern>ETAT DU SYSTEME</pattern>
+    <pattern>INFO SYSTEME</pattern>
+    <pattern>TON ETAT</pattern>
     <template>
-        ✅ **Système Legrand13 Opérationnel**
+        ✅ Système Legrand13 Opérationnel
         • Bot: <get name="bot_name"/>
         • Version: <get name="bot_version"/>
         • Langue: <get name="language"/>
@@ -169,29 +192,54 @@
     </template>
 </category>
 
-<!-- ==================== FALLBACK ==================== -->
 <category>
-    <pattern>*</pattern>
+    <pattern>VERSION</pattern>
+    <pattern>TA VERSION</pattern>
+    <pattern>QUELLE VERSION</pattern>
+    <pattern>NUMERO VERSION</pattern>
     <template>
-        Je n'ai pas bien compris "<star/>". 
-        Pouvez-vous reformuler votre question ?
-        
-        💡 **Conseil** : Essayez avec "programmation", "recherche", "académique"
+        Version <get name="bot_version"/> - Système Legrand13 Academic Assistant
     </template>
 </category>
 
 <category>
     <pattern>AIDE</pattern>
+    <pattern>HELP</pattern>
+    <pattern>MANUEL</pattern>
+    <pattern>COMMENT CA MARCHE</pattern>
+    <pattern>QUELLES COMMANDES</pattern>
     <template>
-        🆘 **Centre d'aide Legrand13**
+        Commandes principales :
+        • Salutations (Bonjour, Salut, Hello)
+        • Présentation (Qui es-tu, Que fais-tu)
+        • Mémoire (Je m'appelle X, Quel est mon nom)
+        • Système (Statut, Version, Aide)
         
-        **Commandes utiles :**
-        • "Bonjour" - Démarrer une conversation
-        • "Qui es tu" - En savoir plus sur moi
-        • "Que peux tu faire" - Voir mes fonctionnalités
-        • "Statut" - Vérifier l'état du système
+        Domaines : Académique, Programmation, Recherche
         
         Quelle est votre question ?
+    </template>
+</category>
+
+<category>
+    <pattern>*</pattern>
+    <template>
+        <random>
+            <li>
+                Je n'ai pas bien compris "<star/>". 
+                Pouvez-vous reformuler avec d'autres mots ?
+            </li>
+            <li>
+                Désolé, je ne sais pas encore répondre à "<star/>".
+                Essayez avec des termes comme "académique", "programmation" ou "recherche" !
+            </li>
+            <li>
+                Je suis encore en apprentissage pour "<star/>".
+                Posez-moi une question sur l'académique ou la programmation !
+            </li>
+        </random>
+        
+        💡 Astuce : Utilisez "AIDE" pour voir mes capacités.
     </template>
 </category>
 
